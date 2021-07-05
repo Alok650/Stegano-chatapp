@@ -6,14 +6,19 @@ import './App.css';
 
 const projectID = 'c6dcb9ed-f2b8-4c95-ab00-71626988532d';
 
+function handleLogout() {
+  localStorage.clear();
+  window.location.reload();
+}
+
 const App = () => {
   if (!localStorage.getItem('username')) return <LoginForm />;
 
   return (
     <div className="chats-page">
       <div className="nav-bar">
-        <div className="logo-tab">Stegano Chat</div>
-        <div className="logout-tab">
+        <div className="logo-tab">STEGANO CHAT</div>
+        <div className="logout-tab" onClick={handleLogout}>
           Logout
         </div>
       </div>
