@@ -188,13 +188,11 @@
   height: 100%;
 }
 
-.stegano-button {
-  cursor: pointer;
+.stegano-icon {
   padding: 0px 12px;
   height: 100%;
-  color:red;
+  margin-bottom: 50px;
 }
-
 
 .send-button {
   height: 42px;

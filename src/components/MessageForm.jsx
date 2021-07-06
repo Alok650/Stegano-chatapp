@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { SendOutlined, PictureOutlined, RedEnvelopeOutlined } from '@ant-design/icons';
+import { SendOutlined, PictureOutlined, SmileOutlined } from '@ant-design/icons';
 import { sendMessage, isTyping } from 'react-chat-engine';
+import FormDialog from './SteganoMessage';
 
 const MessageForm = (props) => {
   const [value, setValue] = useState('');
@@ -29,35 +30,38 @@ const MessageForm = (props) => {
   };
 
   return (
-    <form className="message-form" onSubmit={handleSubmit}>
-      <input
-        className="message-input"
-        placeholder="Send a message..."
-        value={value}
-        onChange={handleChange}
-        onSubmit={handleSubmit}
-      />
-      <label htmlFor="upload-button">
-        <span className="stegano-button">
-          <RedEnvelopeOutlined className="picture-icon" />
-        </span>
-      </label>
-      <input
-        type="file"
-        multiple={false}
-        id="upload-button"
-        style={{ display: 'none' }}
-        onChange={handleUpload.bind(this)}
-      />
-      <label htmlFor="upload-button">
-        <span className="image-button">
-          <PictureOutlined className="picture-icon" />
-        </span>
-      </label>
-      <button type="submit" className="send-button">
-        <SendOutlined className="send-icon" />
-      </button>
-    </form>
+    <>
+      <FormDialog className="stegano__icon" />
+      <form className="message-form" onSubmit={handleSubmit}>
+        <input
+          className="message-input"
+          placeholder="Send a message..."
+          value={value}
+          onChange={handleChange}
+          onSubmit={handleSubmit}
+        />
+        <input
+          type="file"
+          multiple={false}
+          id="upload-button"
+          style={{ display: 'none' }}
+          onChange={handleUpload.bind(this)}
+        />
+        <label htmlFor="upload-button">
+          <span className="image-button">
+            <PictureOutlined className="picture-icon" />
+          </span>
+        </label>
+        <label htmlFor="upload-button">
+          <span className="image-button">
+            <SmileOutlined className="smile-icon" />
+          </span>
+        </label>
+        <button type="submit" className="send-button">
+          <SendOutlined className="send-icon" />
+        </button>
+      </form>
+    </>
   );
 };
 
