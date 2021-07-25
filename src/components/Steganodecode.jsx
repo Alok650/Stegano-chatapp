@@ -8,9 +8,9 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
-import { LockOutlined, UnlockOutlined} from '@ant-design/icons';
+import {UnlockOutlined} from '@ant-design/icons';
 
-import Encrypt from './../views/Encrypt'
+import Decrypt from './../views/Decrypt'
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -38,24 +38,15 @@ export default function EncryptDialog() {
 
   return (
     <div>
-      <Button style={{ backgroundColor: '#41bedd', color: 'white', marginBottom: '10px', borderRadius: '0px', border: '1px solid darkgray' }}>
-        <LockOutlined
-          title="Encode message" 
+      <Button style={{ backgroundColor: '#FF0099', color: 'white', marginBottom: '10px', borderRadius: '0px', border: '1px solid darkgray' }}>
+        <UnlockOutlined
+          title="Decode message"
           cursor="pointer"
           variant="outlined"
           display="inline-block"
           onClick={handleClickOpen}
         />
       </Button>
-      {/* <Button style={{ backgroundColor: '#FF0099', color: 'white', marginBottom: '10px', borderRadius: '0px', border: '1px solid darkgray' }}>
-        <UnlockOutlined
-          title="Decode message"
-          cursor="pointer"
-          variant="outlined"
-          display="inline-block"
-          onClick={event =>  window.location.href='/decode'}
-        />
-      </Button> */}
       <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
         <AppBar className={classes.appBar}>
           <Toolbar>
@@ -63,14 +54,12 @@ export default function EncryptDialog() {
               <CloseIcon />
             </IconButton>
             <Typography variant="h6" className={classes.title}>
-              Stegano Message
+              Stegano Message Decoder
             </Typography>
-            <Button autoFocus color="inherit" onClick={handleClose}>
-              Send
-            </Button>
+
           </Toolbar>
         </AppBar>
-        <Encrypt/>
+        <Decrypt/>
       </Dialog>
     </div>
   );

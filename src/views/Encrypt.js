@@ -203,14 +203,12 @@ class Encrypt extends React.Component {
                   </p>
                   <div>
                     <div className="opacity-10">
-                    <a href="/encoded-image-not-ready3.png" download="data">
                       <img
                         src="/encoded-image-not-ready3.png"
                         alt=""
                         id="encodeimg"
                         className="w-5/12 block mx-auto"
                       />
-                      </a>
                     </div>
                   </div>
                 </div>

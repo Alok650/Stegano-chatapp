@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { SendOutlined, PictureOutlined, SmileOutlined } from '@ant-design/icons';
+import { SendOutlined, PictureOutlined } from '@ant-design/icons';
 import { sendMessage, isTyping } from 'react-chat-engine';
-import FormDialog from './SteganoMessage';
+import EncryptDialog from './SteganoMessage';
+import DecryptDialog from './Steganodecode';
 
 const MessageForm = (props) => {
   const [value, setValue] = useState('');
@@ -31,7 +32,10 @@ const MessageForm = (props) => {
 
   return (
     <>
-      <FormDialog className="stegano__icon" />
+      <div className="flex flex-row">
+      <EncryptDialog className="stegano__icon" />
+      <DecryptDialog className="stegano__icon" />
+      </div>
       <form className="message-form" onSubmit={handleSubmit}>
         <input
           className="message-input"
@@ -50,11 +54,6 @@ const MessageForm = (props) => {
         <label htmlFor="upload-button">
           <span className="image-button">
             <PictureOutlined className="picture-icon" />
-          </span>
-        </label>
-        <label htmlFor="upload-button">
-          <span className="image-button">
-            <SmileOutlined className="smile-icon" />
           </span>
         </label>
         <button type="submit" className="send-button">
