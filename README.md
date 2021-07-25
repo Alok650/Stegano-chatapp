@@ -9,6 +9,10 @@
 
 Here are the list of steps that will get you up and running with the project.
 
+Demo Login
+Username: Alok
+Password: admin
+
 ### Prerequisites
 
 You'll need to clone the repo then install all the dependencies using a package manager.
